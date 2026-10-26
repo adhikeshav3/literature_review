@@ -51,38 +51,38 @@ export const AgentAuditTerminal: React.FC<AgentAuditTerminalProps> = ({
   return (
     <div className="space-y-4">
       {/* Query Formulation Bar */}
-      <div className="bg-slate-900 border border-slate-800 rounded-lg p-3.5 sm:p-4 shadow-sm space-y-3">
+      <div className="bg-white border border-slate-200 rounded-lg p-3.5 sm:p-4 shadow-xs space-y-3">
         <div className="flex items-center justify-between flex-wrap gap-1">
           <div className="flex items-center space-x-2">
-            <Cpu className="w-4 h-4 text-sky-400" />
-            <span className="text-xs font-bold text-white uppercase tracking-wider">
+            <Cpu className="w-4 h-4 text-slate-800" />
+            <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
               Autonomous Multi-Agent Search &amp; Review Pipeline
             </span>
           </div>
-          <span className="text-[10px] sm:text-[11px] font-mono text-slate-400">
-            Parallel: arXiv • CrossRef • OpenAlex
+          <span className="text-[10px] sm:text-[11px] font-mono text-slate-500">
+            Parallel Registries: arXiv • CrossRef • OpenAlex
           </span>
         </div>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
           <div className="relative flex-1">
-            <Search className="w-4 h-4 text-slate-500 absolute left-3 top-2.5" />
+            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
             <input
               type="text"
               value={queryInput}
               onChange={(e) => setQueryInput(e.target.value)}
               placeholder="Input boolean query string: (transformer OR attention) AND (efficiency OR sparse)..."
-              className="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-md pl-9 pr-3 py-2 font-mono focus:outline-none focus:ring-1 focus:ring-sky-500"
+              className="w-full bg-slate-50 border border-slate-300 text-slate-900 text-xs rounded-md pl-9 pr-3 py-2 font-mono focus:outline-none focus:ring-1 focus:ring-slate-900 focus:bg-white placeholder-slate-400"
             />
           </div>
 
           <button
             onClick={() => onRunQuery(queryInput)}
             disabled={isRunning || !queryInput.trim()}
-            className={`px-4 py-2 rounded-md text-xs font-semibold flex items-center justify-center space-x-2 transition-all shadow-sm ${
+            className={`px-4 py-2 rounded-md text-xs font-semibold flex items-center justify-center space-x-2 transition-all shadow-xs ${
               isRunning
-                ? 'bg-amber-600/30 text-amber-300 border border-amber-500/50 cursor-wait'
-                : 'bg-sky-600 hover:bg-sky-500 text-white'
+                ? 'bg-amber-100 text-amber-900 border border-amber-300 cursor-wait'
+                : 'bg-slate-900 hover:bg-slate-800 text-white'
             }`}
           >
             <Play className={`w-3.5 h-3.5 ${isRunning ? 'animate-spin' : ''}`} />
@@ -91,23 +91,23 @@ export const AgentAuditTerminal: React.FC<AgentAuditTerminalProps> = ({
         </div>
 
         {/* Quick Sample Queries */}
-        <div className="flex items-center space-x-1.5 sm:space-x-2 text-[10px] sm:text-[11px] text-slate-400 flex-wrap gap-y-1">
-          <span className="text-slate-500 font-medium">Quick Protocols:</span>
+        <div className="flex items-center space-x-1.5 sm:space-x-2 text-[10px] sm:text-[11px] text-slate-500 flex-wrap gap-y-1">
+          <span className="text-slate-600 font-semibold">Quick Protocols:</span>
           <button
             onClick={() => setQueryInput('(transformer OR "attention mechanism") AND (efficiency OR sparse OR linear) AND (benchmark OR latency)')}
-            className="text-sky-400 hover:underline bg-slate-950 px-2 py-0.5 rounded border border-slate-800"
+            className="text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-2 py-0.5 rounded border border-slate-200 transition-colors"
           >
             Transformers
           </button>
           <button
             onClick={() => setQueryInput('(CRISPR OR "Cas9" OR "base editor") AND (off-target OR specificity OR cleavage) AND human')}
-            className="text-sky-400 hover:underline bg-slate-950 px-2 py-0.5 rounded border border-slate-800"
+            className="text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-2 py-0.5 rounded border border-slate-200 transition-colors"
           >
             CRISPR Off-Target
           </button>
           <button
             onClick={() => setQueryInput('("GLP-1" OR semaglutide OR tirzepatide) AND (cardiovascular OR mortality OR MACE) AND trial')}
-            className="text-sky-400 hover:underline bg-slate-950 px-2 py-0.5 rounded border border-slate-800"
+            className="text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-2 py-0.5 rounded border border-slate-200 transition-colors"
           >
             GLP-1 MACE
           </button>
@@ -115,9 +115,9 @@ export const AgentAuditTerminal: React.FC<AgentAuditTerminalProps> = ({
       </div>
 
       {/* Terminal Output Window */}
-      <div className="bg-slate-950 border border-slate-800 rounded-lg shadow-inner overflow-hidden font-mono text-xs">
+      <div className="bg-slate-950 border border-slate-800 rounded-lg shadow-md overflow-hidden font-mono text-xs">
         {/* Terminal Header */}
-        <div className="bg-slate-900/90 px-3.5 sm:px-4 py-2 sm:py-2.5 border-b border-slate-800 flex items-center justify-between">
+        <div className="bg-slate-900 px-3.5 sm:px-4 py-2 sm:py-2.5 border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
@@ -132,7 +132,7 @@ export const AgentAuditTerminal: React.FC<AgentAuditTerminalProps> = ({
               aria-label="Filter by Agent"
               value={filterAgent}
               onChange={(e) => setFilterAgent(e.target.value)}
-              className="bg-slate-950 border border-slate-800 text-slate-300 text-[10px] sm:text-[11px] rounded px-2 py-0.5 focus:outline-none"
+              className="bg-slate-950 border border-slate-750 text-slate-300 text-[10px] sm:text-[11px] rounded px-2 py-0.5 focus:outline-none"
             >
               <option value="all">All Agents</option>
               <option value="SearchAgent">SearchAgent</option>

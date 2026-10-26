@@ -1,7 +1,36 @@
 # EPISTEME | Autonomous Systematic Literature Review Workbench
 ### PRISMA 2020 Compliant Research Synthesis & Evidence Extraction Engine
 
-> **A peer-grade scientific intelligence workbench for clinical and academic systematic reviews. Built to feel 100% human-expert, rigorous, transparent, and grounded—without superficial AI conversational fluff.**
+> **A peer-grade scientific intelligence workbench for clinical and academic systematic reviews. Built to feel 100% human-expert, rigorous, transparent, and grounded—with a clean white academic journal aesthetic (Nature/Lancet/Overleaf style), full mobile and laptop compatibility, and zero conversational fluff.**
+
+---
+
+## 🏛️ Pre-Loaded Benchmark Review Projects (Instant Demos)
+
+EPISTEME comes pre-loaded with three diverse, fully analyzed gold-standard systematic reviews ready for instant demonstration:
+
+1. **Computer Science & AI**: *Efficiency & Sparsity in Transformer Architectures* (FlashAttention, Linformer, Performer, BigBird, Reformer, etc.)
+2. **Genetics & Molecular Biology**: *CRISPR-Cas9 Off-Target Cleavage & Base Editing Fidelity* (SpCas9, Prime Editing, Adenine Base Editors, GUIDESeq, etc.)
+3. **Cardiology & Clinical Medicine**: *GLP-1 Receptor Agonists & Major Adverse Cardiovascular Events (MACE)* (Landmark Phase 3 trials: SELECT, SUSTAIN-6, LEADER, etc.)
+
+Easily switch between them via the top project selector or create your own custom systematic review protocol with custom boolean queries across arXiv, CrossRef, and OpenAlex.
+
+---
+
+## 📱 Cross-Device Responsive Architecture
+
+- **Laptop & Desktop Screens**: Expansive multi-column Evidence Matrix tables, interactive Cochrane RoB 2 traffic-light matrices, vector PRISMA 2020 flowcharts, and co-citation graph visualizations.
+- **Mobile Phones & Tablets**: Touch-friendly horizontal navigation tabs, adaptive card-based evidence views with responsive badges, collapsible slide-over paper drawers, and stacked PRISMA flow stage cards.
+
+---
+
+## 🎨 Clean Academic Interface ("Non-AI" Look)
+
+Designed intentionally to mirror prestigious peer-reviewed journals and Overleaf preprints:
+- **Clean White Paper Canvas**: Slate-50 background with pure white cards, crisp borders, and deep slate typography for maximum readability.
+- **Academic Hierarchy**: Clear visual demarcation for PICO parameters ($N$, Population, Intervention, Comparator, Findings).
+- **Cochrane Traffic-Light Badges**: High-contrast, standard green/amber/red indicators for risk of bias appraisal.
+- **Export Ready**: 1-click vector PRISMA SVG, BibTeX (`.bib`), RIS (`.ris`), and CSV Evidence Matrix.
 
 ---
 
@@ -43,7 +72,7 @@ EPISTEME implements recognized international standards for evidence synthesis an
 
 ### Prerequisites
 - Python 3.10+
-- Node.js 18+ (frontend is pre-built into `frontend/dist`)
+*(Frontend production bundle is pre-compiled in `frontend/dist`, requiring zero Node.js setup!)*
 
 ### Launch Application
 From the repository root, execute:

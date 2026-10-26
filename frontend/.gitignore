@@ -8,8 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
-dist-ssr
+# dist included for turnkey out-of-the-box Python execution without node dependency
 *.local
 
 # Editor directories and files

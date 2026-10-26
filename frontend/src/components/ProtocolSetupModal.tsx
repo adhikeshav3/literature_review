@@ -86,43 +86,43 @@ export const ProtocolSetupModal: React.FC<ProtocolSetupModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-xs overflow-y-auto">
-      <div className="bg-slate-900 border border-slate-750 rounded-lg max-w-2xl w-full p-4 sm:p-6 shadow-2xl my-6 space-y-4 max-h-[92vh] overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/40 backdrop-blur-2xs overflow-y-auto">
+      <div className="bg-white border border-slate-300 rounded-lg max-w-2xl w-full p-4 sm:p-6 shadow-2xl my-6 space-y-4 max-h-[92vh] overflow-y-auto text-slate-800">
         {/* Modal Header */}
-        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div className="flex items-center justify-between border-b border-slate-200 pb-3">
           <div className="flex items-center space-x-2">
-            <BookMarked className="w-5 h-5 text-sky-400" />
-            <h2 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
+            <BookMarked className="w-5 h-5 text-slate-900" />
+            <h2 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wider">
               Register Review Protocol (PRISMA 2020)
             </h2>
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-white p-1">
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-700 p-1">
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Quick Scientific Presets */}
-        <div className="bg-slate-950 p-2.5 sm:p-3 rounded-lg border border-slate-800 flex items-center justify-between flex-wrap gap-2 text-xs">
-          <span className="text-slate-400 font-semibold text-[11px] sm:text-xs">Load Preset:</span>
+        <div className="bg-slate-50 p-2.5 sm:p-3 rounded-lg border border-slate-200 flex items-center justify-between flex-wrap gap-2 text-xs">
+          <span className="text-slate-600 font-semibold text-[11px] sm:text-xs">Load Benchmark Protocol:</span>
           <div className="flex space-x-1.5 sm:space-x-2 flex-wrap gap-y-1">
             <button
               type="button"
               onClick={() => handleApplyPreset('crispr')}
-              className="px-2 py-0.5 sm:py-1 bg-slate-900 hover:bg-slate-800 text-sky-300 rounded border border-slate-700 text-[11px] font-medium"
+              className="px-2 py-0.5 sm:py-1 bg-white hover:bg-slate-100 text-slate-800 rounded border border-slate-300 text-[11px] font-medium shadow-2xs"
             >
-              CRISPR
+              CRISPR Off-Target
             </button>
             <button
               type="button"
               onClick={() => handleApplyPreset('glp1')}
-              className="px-2 py-0.5 sm:py-1 bg-slate-900 hover:bg-slate-800 text-emerald-300 rounded border border-slate-700 text-[11px] font-medium"
+              className="px-2 py-0.5 sm:py-1 bg-white hover:bg-slate-100 text-slate-800 rounded border border-slate-300 text-[11px] font-medium shadow-2xs"
             >
               GLP-1 MACE
             </button>
             <button
               type="button"
               onClick={() => handleApplyPreset('gnn')}
-              className="px-2 py-0.5 sm:py-1 bg-slate-900 hover:bg-slate-800 text-purple-300 rounded border border-slate-700 text-[11px] font-medium"
+              className="px-2 py-0.5 sm:py-1 bg-white hover:bg-slate-100 text-slate-800 rounded border border-slate-300 text-[11px] font-medium shadow-2xs"
             >
               Molecular GNN
             </button>
@@ -132,7 +132,7 @@ export const ProtocolSetupModal: React.FC<ProtocolSetupModalProps> = ({
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-3.5 text-xs">
           <div>
-            <label className="block text-slate-300 font-semibold mb-1">
+            <label className="block text-slate-700 font-semibold mb-1">
               Review Protocol Title *
             </label>
             <input
@@ -141,12 +141,12 @@ export const ProtocolSetupModal: React.FC<ProtocolSetupModalProps> = ({
               placeholder="e.g., Efficiency &amp; Sparsity in Transformer Architectures: Systematic Review"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-800 rounded p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-sky-500"
+              className="w-full bg-slate-50 border border-slate-300 rounded p-2 text-slate-900 focus:outline-none focus:ring-1 focus:ring-slate-900 focus:bg-white"
             />
           </div>
 
           <div>
-            <label className="block text-slate-300 font-semibold mb-1">
+            <label className="block text-slate-700 font-semibold mb-1">
               Primary Research Question (PICO) *
             </label>
             <textarea
@@ -155,57 +155,57 @@ export const ProtocolSetupModal: React.FC<ProtocolSetupModalProps> = ({
               placeholder="e.g., What are the empirical trade-offs, accuracy benchmarks, and computational profiles of sparse attention vs dense attention in language models?"
               value={researchQuestion}
               onChange={(e) => setResearchQuestion(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-800 rounded p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-sky-500"
+              className="w-full bg-slate-50 border border-slate-300 rounded p-2 text-slate-900 focus:outline-none focus:ring-1 focus:ring-slate-900 focus:bg-white"
             />
           </div>
 
           {/* PICO Framework Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
             <div>
-              <label className="block text-slate-400 font-medium mb-1">Population (P):</label>
+              <label className="block text-slate-600 font-medium mb-1">Population (P):</label>
               <input
                 type="text"
                 placeholder="e.g., Sequence modeling architectures"
                 value={population}
                 onChange={(e) => setPopulation(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-800 rounded p-2 text-slate-200 focus:ring-1 focus:ring-sky-500"
+                className="w-full bg-slate-50 border border-slate-300 rounded p-2 text-slate-800 focus:ring-1 focus:ring-slate-900 focus:bg-white"
               />
             </div>
             <div>
-              <label className="block text-slate-400 font-medium mb-1">Intervention (I):</label>
+              <label className="block text-slate-600 font-medium mb-1">Intervention (I):</label>
               <input
                 type="text"
                 placeholder="e.g., Sparse or linear attention mechanisms"
                 value={intervention}
                 onChange={(e) => setIntervention(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-800 rounded p-2 text-slate-200 focus:ring-1 focus:ring-sky-500"
+                className="w-full bg-slate-50 border border-slate-300 rounded p-2 text-slate-800 focus:ring-1 focus:ring-slate-900 focus:bg-white"
               />
             </div>
             <div>
-              <label className="block text-slate-400 font-medium mb-1">Comparator (C):</label>
+              <label className="block text-slate-600 font-medium mb-1">Comparator (C):</label>
               <input
                 type="text"
                 placeholder="e.g., Standard quadratic self-attention"
                 value={comparator}
                 onChange={(e) => setComparator(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-800 rounded p-2 text-slate-200 focus:ring-1 focus:ring-sky-500"
+                className="w-full bg-slate-50 border border-slate-300 rounded p-2 text-slate-800 focus:ring-1 focus:ring-slate-900 focus:bg-white"
               />
             </div>
             <div>
-              <label className="block text-slate-400 font-medium mb-1">Outcomes (O):</label>
+              <label className="block text-slate-600 font-medium mb-1">Outcomes (O):</label>
               <input
                 type="text"
                 placeholder="e.g., Wall-clock speedup, memory, accuracy"
                 value={outcomes}
                 onChange={(e) => setOutcomes(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-800 rounded p-2 text-slate-200 focus:ring-1 focus:ring-sky-500"
+                className="w-full bg-slate-50 border border-slate-300 rounded p-2 text-slate-800 focus:ring-1 focus:ring-slate-900 focus:bg-white"
               />
             </div>
           </div>
 
           {/* Boolean Search String */}
           <div>
-            <label className="block text-slate-300 font-semibold mb-1">
+            <label className="block text-slate-700 font-semibold mb-1">
               Initial Boolean Search String (AND/OR/NOT):
             </label>
             <input
@@ -213,56 +213,56 @@ export const ProtocolSetupModal: React.FC<ProtocolSetupModalProps> = ({
               placeholder='(transformer OR attention) AND (efficiency OR sparse OR linear)'
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-800 rounded p-2 text-slate-200 font-mono focus:ring-1 focus:ring-sky-500"
+              className="w-full bg-slate-50 border border-slate-300 rounded p-2 text-slate-900 font-mono focus:ring-1 focus:ring-slate-900 focus:bg-white"
             />
           </div>
 
           {/* Databases */}
           <div>
-            <label className="block text-slate-400 font-medium mb-1.5">Target Academic Databases:</label>
+            <label className="block text-slate-600 font-medium mb-1.5">Target Academic Databases:</label>
             <div className="flex space-x-3 sm:space-x-4 flex-wrap gap-y-1">
               <label className="flex items-center space-x-1.5 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={databases.includes('openalex')}
                   onChange={() => toggleDb('openalex')}
-                  className="rounded bg-slate-950 border-slate-800 text-sky-500 focus:ring-0"
+                  className="rounded bg-white border-slate-300 text-slate-900 focus:ring-0"
                 />
-                <span className="text-slate-300 text-[11px] sm:text-xs">OpenAlex (250M+)</span>
+                <span className="text-slate-800 text-[11px] sm:text-xs">OpenAlex (250M+)</span>
               </label>
               <label className="flex items-center space-x-1.5 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={databases.includes('arxiv')}
                   onChange={() => toggleDb('arxiv')}
-                  className="rounded bg-slate-950 border-slate-800 text-sky-500 focus:ring-0"
+                  className="rounded bg-white border-slate-300 text-slate-900 focus:ring-0"
                 />
-                <span className="text-slate-300 text-[11px] sm:text-xs">arXiv Pre-prints</span>
+                <span className="text-slate-800 text-[11px] sm:text-xs">arXiv Pre-prints</span>
               </label>
               <label className="flex items-center space-x-1.5 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={databases.includes('crossref')}
                   onChange={() => toggleDb('crossref')}
-                  className="rounded bg-slate-950 border-slate-800 text-sky-500 focus:ring-0"
+                  className="rounded bg-white border-slate-300 text-slate-900 focus:ring-0"
                 />
-                <span className="text-slate-300 text-[11px] sm:text-xs">CrossRef DOI</span>
+                <span className="text-slate-800 text-[11px] sm:text-xs">CrossRef DOI</span>
               </label>
             </div>
           </div>
 
           {/* Submit Action */}
-          <div className="flex justify-end space-x-2 pt-3 border-t border-slate-800">
+          <div className="flex justify-end space-x-2 pt-3 border-t border-slate-200">
             <button
               type="button"
               onClick={onClose}
-              className="px-3 sm:px-4 py-2 text-slate-400 hover:text-white transition-colors"
+              className="px-3 sm:px-4 py-2 text-slate-600 hover:text-slate-900 transition-colors"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-4 sm:px-5 py-2 bg-sky-600 hover:bg-sky-500 text-white font-semibold rounded shadow-sm transition-colors"
+              className="px-4 sm:px-5 py-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded shadow-xs transition-colors"
             >
               Register Protocol &amp; Create Workbench
             </button>

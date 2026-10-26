@@ -176,12 +176,12 @@ export const App: React.FC = () => {
   const includedCount = papersList.filter((p) => p.screening.status === 'included').length;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-sky-100 selection:text-sky-900">
       {/* Toast Notification */}
       {notification && (
-        <div className="fixed bottom-4 sm:bottom-5 right-4 sm:right-5 left-4 sm:left-auto z-50 bg-slate-900 border border-slate-700 text-sky-300 text-xs px-4 py-2.5 rounded-lg shadow-2xl flex items-center space-x-2 animate-bounce">
-          <span className="w-2 h-2 rounded-full bg-sky-400 shrink-0"></span>
-          <span className="truncate">{notification}</span>
+        <div className="fixed bottom-4 sm:bottom-5 right-4 sm:right-5 left-4 sm:left-auto z-50 bg-slate-900 text-white text-xs px-4 py-2.5 rounded-lg shadow-2xl flex items-center space-x-2 border border-slate-750">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+          <span className="truncate font-medium">{notification}</span>
         </div>
       )}
 
